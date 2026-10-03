@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Kiran Academy - Learn HTML, CSS, JavaScript, Python Full Stack and Java Full Stack Development.">
+
+    <title>Kiran Academy | Full Stack Development</title>
+
+    <style>
+
+        /* ========================================
+           RESET
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        /* ========================================
+           BODY
+        ======================================== */
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5faff;
+            color: #172554;
+            line-height: 1.6;
+        }
+
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ========================================
+           NAVBAR
+        ======================================== */
+
+        header {
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: white;
+
+            box-shadow:
+                0 3px 15px rgba(0, 80, 180, 0.10);
+        }
+
+
+        .navbar {
+            width: 90%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            min-height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        /* Logo */
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            color: #0757c9;
+
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .logo-box {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0757c9,
+                    #08a0ff
+                );
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /* Navigation */
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        nav a {
+            color: #173b7a;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #0785ff;
+        }
+
+
+        /* ========================================
+           HERO SECTION
+        ======================================== */
+
+        .hero {
+
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            color: white;
+
+            background:
+
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(255,255,255,0.35),
+                    transparent 25%
+                ),
+
+                linear-gradient(
+                    135deg,
+                    #0347a9,
+                    #087ee8,
+                    #65c9ff
+                );
+        }
+
+
+        .hero-container {
+
+            width: 90%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.15fr
+                0.85fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        /* Badge */
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            margin-bottom: 20px;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255,255,255,0.18);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.35);
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* Hero Heading */
+
+        .hero h1 {
+
+            font-size:
+                clamp(
+                    42px,
+                    6vw,
+                    70px
+                );
+
+            line-height: 1.05;
+
+            margin-bottom: 22px;
+
+            letter-spacing: -2px;
+        }
+
+
+        .hero p {
+
+            max-width: 650px;
+
+            color: #edf8ff;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* Buttons */
+
+        .buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding:
+                13px
+                23px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .btn-white {
+
+            background: white;
+
+            color: #0757c9;
+        }
+
+
+        .btn-white:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,0.15);
+        }
+
+
+        .btn-blue {
+
+            background: #0757c9;
+
+            color: white;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.5);
+        }
+
+
+        .btn-blue:hover {
+
+            background: #063d91;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* ========================================
+           HERO CARD
+        ======================================== */
+
+        .hero-card {
+
+            padding: 32px;
+
+            background: white;
+
+            color: #172554;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,50,130,0.25);
+        }
+
+
+        .hero-card h2 {
+
+            color: #073d91;
+
+            margin-bottom: 10px;
+
+            font-size: 28px;
+        }
+
+
+        .hero-card p {
+
+            color: #64748b;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-item {
+
+            padding: 14px;
+
+            margin-top: 12px;
+
+            border-radius: 12px;
+
+            background: #eef7ff;
+
+            color: #0757c9;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .hero-item:hover {
+
+            background: #dceeff;
+
+            transform:
+                translateX(5px);
+        }
+
+
+        /* ========================================
+           COMMON SECTION
+        ======================================== */
+
+        section {
+
+            padding:
+                85px 0;
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+
+        .section-title h2 {
+
+            color: #073d91;
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .section-title p {
+
+            color: #64748b;
+
+            font-size: 16px;
+        }
+
+
+        /* ========================================
+           COURSES SECTION
+        ======================================== */
+
+        .courses {
+
+            background: white;
+        }
+
+
+        .course-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ========================================
+           COURSE CARD
+        ======================================== */
+
+        .course-card {
+
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 30px;
+
+            background: white;
+
+            border:
+                1px solid
+                #d8eaff;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(30,64,175,0.08);
+
+            transition:
+                0.3s;
+        }
+
+
+        /* Top blue line */
+
+        .course-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #0757c9,
+                    #20a9ff
+                );
+        }
+
+
+        .course-card:hover {
+
+            transform:
+                translateY(-10px);
+
+            box-shadow:
+                0 20px 45px
+                rgba(30,64,175,0.18);
+        }
+
+
+        /* Course Icon */
+
+        .course-icon {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+
+            border-radius: 16px;
+
+            background:
+                #e7f3ff;
+
+            color:
+                #0757c9;
+
+            font-size: 18px;
+
+            font-weight: 900;
+        }
+
+
+        /* Course title */
+
+        .course-card h3 {
+
+            color:
+                #073d91;
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .course-card p {
+
+            color:
+                #64748b;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Skills */
+
+        .skills {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 22px;
+        }
+
+
+        .skill {
+
+            padding:
+                6px 10px;
+
+            border-radius: 7px;
+
+            background:
+                #eff6ff;
+
+            color:
+                #0757c9;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+
+        /* Course button */
+
+        .course-btn {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 12px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                #0757c9;
+
+            border-radius: 9px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .course-btn:hover {
+
+            background:
+                #043b8e;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* ========================================
+           WHY CHOOSE US
+        ======================================== */
+
+        .why {
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #eef7ff,
+                    white
+                );
+        }
+
+
+        .why-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .why-card {
+
+            text-align: center;
+
+            padding: 30px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            border:
+                1px solid
+                #dcecff;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,70,150,0.07);
+        }
+
+
+        .why-icon {
+
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin:
+                0 auto 15px;
+
+            border-radius: 50%;
+
+            background:
+                #e5f3ff;
+
+            color:
+                #0757c9;
+
+            font-size: 25px;
+        }
+
+
+        .why-card h3 {
+
+            color:
+                #073d91;
+
+            margin-bottom: 8px;
+        }
+
+
+        .why-card p {
+
+            color:
+                #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* ========================================
+           FREE DEMO SECTION
+        ======================================== */
+
+        .demo {
+
+            background:
+                white;
+        }
+
+
+        .demo-box {
+
+            padding:
+                60px 30px;
+
+            text-align:
+                center;
+
+            border-radius:
+                25px;
+
+            color:
+                white;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #0757c9,
+                    #078df5
+                );
+
+            box-shadow:
+                0 20px 45px
+                rgba(7,87,201,0.2);
+        }
+
+
+        .demo-box h2 {
+
+            font-size:
+                40px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .demo-box p {
+
+            max-width:
+                700px;
+
+            margin:
+                0 auto 25px;
+
+            color:
+                #e8f6ff;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+
+            padding:
+                30px 0;
+
+            text-align:
+                center;
+
+            background:
+                #062f70;
+
+            color:
+                white;
+        }
+
+
+        footer p {
+
+            color:
+                #cde5ff;
+        }
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media(max-width: 900px) {
+
+            .hero-container {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .course-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+
+            .why-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+        }
+
+
+        @media(max-width: 650px) {
+
+            .navbar {
+
+                min-height:
+                    65px;
+            }
+
+
+            nav {
+
+                display:
+                    none;
+            }
+
+
+            .hero {
+
+                min-height:
+                    auto;
+
+                padding:
+                    70px 0;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    44px;
+            }
+
+
+            .hero-card {
+
+                padding:
+                    25px;
+            }
+
+
+            .course-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .why-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .section-title h2 {
+
+                font-size:
+                    32px;
+            }
+
+
+            .demo-box h2 {
+
+                font-size:
+                    32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+         NAVIGATION
+    ======================================== -->
+
+    <header>
+
+        <div class="navbar">
+
+            <a href="#home" class="logo">
+
+                <span class="logo-box">
+                    KA
+                </span>
+
+                Kiran Academy
+
+            </a>
+
+
+            <nav>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#why">
+                    Why Us
+                </a>
+
+                <a href="#demo">
+                    Free Demo
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         HERO
+    ======================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+
+            <!-- LEFT SIDE -->
+
+            <div>
+
+                <span class="badge">
+                    Kiran Academy to Everyone
+                </span>
+
+
+                <h1>
+                    Build Your Future
+                    With Full Stack Development
+                </h1>
+
+
+                <p>
+
+                    Learn practical programming,
+                    web development and full stack
+                    development skills with
+                    industry-focused courses.
+
+                </p>
+
+
+                <div class="buttons">
+
+                    <a
+                        href="#courses"
+                        class="btn btn-white"
+                    >
+                        Explore Courses
+                    </a>
+
+
+                    <a
+                        href="https://forms.gle/3eonkbCH1UPy9pp8"
+                        target="_blank"
+                        class="btn btn-blue"
+                    >
+                        Free Demo
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="hero-card">
+
+                <h2>
+                    Start Learning Today
+                </h2>
+
+
+                <p>
+                    Choose your technology path
+                    and begin your development journey.
+                </p>
+
+
+                <div class="hero-item">
+
+                    💻 HTML • CSS • JavaScript
+
+                </div>
+
+
+                <div class="hero-item">
+
+                    🐍 Python Full Stack
+
+                </div>
+
+
+                <div class="hero-item">
+
+                    ☕ Java Full Stack
+
+                </div>
+
+
+                <div class="hero-item">
+
+                    🚀 Projects & Practical Training
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         COURSES
+    ======================================== -->
+
+    <section class="courses" id="courses">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Our Full Stack Courses
+                </h2>
+
+                <p>
+                    Choose the course that matches
+                    your career goal.
+                </p>
+
+            </div>
+
+
+
+            <div class="course-grid">
+
+
+                <!-- =================================
+                     CARD 1
+                ================================= -->
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        &lt;/&gt;
+
+                    </div>
+
+
+                    <h3>
+                        HTML, CSS & JavaScript
+                    </h3>
+
+
+                    <p>
+
+                        Learn the foundations of
+                        modern web development and
+                        create responsive,
+                        interactive websites.
+
+                    </p>
+
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            HTML5
+                        </span>
+
+                        <span class="skill">
+                            CSS3
+                        </span>
+
+                        <span class="skill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill">
+                            Responsive Design
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://forms.gle/3eonkbCH1UPy9pp8"
+                        target="_blank"
+                        class="course-btn"
+                    >
+
+                        Get Course Details
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CARD 2
+                ================================= -->
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        PY
+
+                    </div>
+
+
+                    <h3>
+                        Python Full Stack Developer
+                    </h3>
+
+
+                    <p>
+
+                        Learn frontend and backend
+                        development using Python
+                        and build complete web
+                        applications.
+
+                    </p>
+
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            HTML
+                        </span>
+
+                        <span class="skill">
+                            CSS
+                        </span>
+
+                        <span class="skill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill">
+                            Python
+                        </span>
+
+                        <span class="skill">
+                            Django
+                        </span>
+
+                        <span class="skill">
+                            SQL
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://forms.gle/3eonkbCH1UPy9pp8"
+                        target="_blank"
+                        class="course-btn"
+                    >
+
+                        Get Course Details
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CARD 3
+                ================================= -->
+
+                <div class="course-card">
+
+                    <div class="course-icon">
+
+                        JV
+
+                    </div>
+
+
+                    <h3>
+                        Java Full Stack Developer
+                    </h3>
+
+
+                    <p>
+
+                        Build professional full stack
+                        applications using Java,
+                        frontend technologies and
+                        backend frameworks.
+
+                    </p>
+
+
+                    <div class="skills">
+
+                        <span class="skill">
+                            HTML
+                        </span>
+
+                        <span class="skill">
+                            CSS
+                        </span>
+
+                        <span class="skill">
+                            JavaScript
+                        </span>
+
+                        <span class="skill">
+                            Java
+                        </span>
+
+                        <span class="skill">
+                            Spring Boot
+                        </span>
+
+                        <span class="skill">
+                            SQL
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="https://forms.gle/3eonkbCH1UPy9pp8"
+                        target="_blank"
+                        class="course-btn"
+                    >
+
+                        Get Course Details
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         WHY CHOOSE US
+    ======================================== -->
+
+    <section class="why" id="why">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Why Choose Kiran Academy?
+                </h2>
+
+                <p>
+                    Learn with practical training
+                    and career-focused programs.
+                </p>
+
+            </div>
+
+
+
+            <div class="why-grid">
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        💻
+                    </div>
+
+                    <h3>
+                        Practical Learning
+                    </h3>
+
+                    <p>
+                        Learn through practical
+                        coding and real projects.
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        🎓
+                    </div>
+
+                    <h3>
+                        Expert Training
+                    </h3>
+
+                    <p>
+                        Develop your programming
+                        and development skills.
+                    </p>
+
+                </div>
+
+
+
+                <div class="why-card">
+
+                    <div class="why-icon">
+                        🚀
+                    </div>
+
+                    <h3>
+                        Career Focused
+                    </h3>
+
+                    <p>
+                        Build skills that can help
+                        you prepare for development
+                        careers.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FREE DEMO
+    ======================================== -->
+
+    <section class="demo" id="demo">
+
+        <div class="container">
+
+            <div class="demo-box">
+
+                <h2>
+                    Join Our Free Demo
+                </h2>
+
+
+                <p>
+
+                    Get course details,
+                    fee structure and information
+                    about the available programs
+                    from Kiran Academy.
+
+                </p>
+
+
+                <a
+                    href="https://forms.gle/3eonkbCH1UPy9pp8"
+                    target="_blank"
+                    class="btn btn-white"
+                >
+
+                    Register For Free Demo
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         CONTACT
+    ======================================== -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Start Your Career Journey
+                </h2>
+
+
+                <p>
+
+                    Choose a course and contact
+                    Kiran Academy for course
+                    structure and fee details.
+
+                </p>
+
+            </div>
+
+
+            <div style="text-align:center;">
+
+                <a
+                    href="https://forms.gle/3eonkbCH1UPy9pp8"
+                    target="_blank"
+                    class="btn btn-blue"
+                >
+
+                    Get Course Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Kiran Academy.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
